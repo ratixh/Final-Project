@@ -1,5 +1,13 @@
 package com.Smart.service;
 
-public interface PersonService {
+import com.Smart.entity.User;
 
+public interface PersonService
+{
+    public User findByUserEmailAndUserPassword(String userEmail,String userPassword);
+ 
+	
+	public void saveUserDetail(User user);
+	
 }
+

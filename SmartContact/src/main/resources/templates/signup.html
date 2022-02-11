@@ -18,7 +18,8 @@
                <div class=" col-md-6 offset-md-3">
                
                    <div class="my-card mt-3">
-                   <div class="container text-center">
+                       <div class="container text-center">
+                       
                      <img style = "width:80px;" alt="edit oicture" th:src="@{/images/edit.png}" src="">
                    
                    </div>
@@ -27,7 +28,7 @@
                    
                    <h1 class="text-center">Register Here!!</h1>
                   
-                   <form action="" th:action="@{/do_register}"  method="post" th:object="${user}">
+ <form  th:action="@{/do_register}"  method="post" th:object="${user}">
                    
      
      <!-- Name Field -->
@@ -38,15 +39,14 @@
               <label for="name_field">Name</label>
               
               <input 
-              name="name"
+              name="userName"
               type="text" 
               class="form-control" 
               id="name_field" 
               aria-describedby="emailHelp"
               placeholder= "Enter here"
               required
-              th:value="${user.name}"
-              />
+              th:value="${user.userName}"/>
               
               
       </div>
@@ -59,14 +59,14 @@
               <label for="email_field">Email</label>
               
               <input 
-              name="email"
+              name="userEmail"
               type="email" 
               class="form-control" 
               id="email_field" 
               aria-describedby="emailHelp"
               placeholder= "Enter here"
               required
-              th:value="${user.email}"
+              th:value="${user.userEmail}"
               />
               
               
@@ -80,14 +80,14 @@
               <label for="password_field">Password</label>
               
               <input 
-              name="password"
+              name="userPassword"
               type="password" 
               class="form-control" 
               id="password_field" 
               aria-describedby="emailHelp"
               placeholder= "Enter here"
               required
-               th:value="${user.password}"
+               th:value="${user.userPassword}"
               />
               
        </div>

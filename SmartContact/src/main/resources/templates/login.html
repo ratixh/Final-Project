@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" >
+<head>
+<meta charset="ISO-8859-1">
+<title>SignUp</title>
+</head>
+<body>
+
+   <section>
+        <div class= "container">
+           <div class="row">
+           
+               <div class="loginBanner col-md-8 offset-md-2">
+                   <div th:object="${user}">
+                         <h1 th:text="${user.userEmail}"></h1>
+                         <h1 th:text="*{userEmail}"></h1>
+                   </div>
+                <h1>This is my login page</h1> 
+               </div>
+           
+           </div>
+        
+        </div>  
+   
+   
+   </section>
+
+</body>
+</html>

@@ -18,29 +18,29 @@ import javax.persistence.Table;
 public class User 
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int userId;
     
     @Column
-	private String name;
+	private String userName;
     
     @Column(unique = true)
-	private String email;
+	private String userEmail;
     
     @Column
-	private String password;
+	private String userPassword;
     
     @Column
-	private String role;
+	private String userRole;
     
     @Column
-	private boolean enabled;
+	private boolean userEnabled;
     
     @Column
-	private String imageUrl;
+	private String userImageUrl;
     
     @Column(length = 500)
-	private String about;
+	private String userAbout;
     
     
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
@@ -53,78 +53,138 @@ public class User
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
-		return id;
+
+
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public String getName() {
-		return name;
+
+
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getEmail() {
-		return email;
+
+
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
-	public String getPassword() {
-		return password;
+
+
+	public String getUserPassword() {
+		return userPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
-	public String getRole() {
-		return role;
+
+
+	public String getUserRole() {
+		return userRole;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+
+
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
 	}
 
-	public boolean isEnabled() {
-		return enabled;
+
+
+	public boolean isUserEnabled() {
+		return userEnabled;
 	}
 
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
+
+
+	public void setUserEnabled(boolean userEnabled) {
+		this.userEnabled = userEnabled;
 	}
 
-	public String getImageUrl() {
-		return imageUrl;
+
+
+	public String getUserImageUrl() {
+		return userImageUrl;
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+
+
+	public void setUserImageUrl(String userImageUrl) {
+		this.userImageUrl = userImageUrl;
 	}
 
-	public String getAbout() {
-		return about;
+
+
+	public String getUserAbout() {
+		return userAbout;
 	}
 
-	public void setAbout(String about) {
-		this.about = about;
+
+
+	public void setUserAbout(String userAbout) {
+		this.userAbout = userAbout;
 	}
+
+
 
 	public List<Contact> getContacts() {
 		return contacts;
 	}
 
+
+
 	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
 	}
-    
-    
+
+
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", userEmail=" + userEmail + ", userPassword="
+				+ userPassword + ", userRole=" + userRole + ", userEnabled=" + userEnabled + ", userImageUrl="
+				+ userImageUrl + ", userAbout=" + userAbout + ", contacts=" + contacts + "]";
+	}
+
+
+
+	public User(int userId, String userName, String userEmail, String userPassword, String userRole,
+			boolean userEnabled, String userImageUrl, String userAbout, List<Contact> contacts) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.userEmail = userEmail;
+		this.userPassword = userPassword;
+		this.userRole = userRole;
+		this.userEnabled = userEnabled;
+		this.userImageUrl = userImageUrl;
+		this.userAbout = userAbout;
+		this.contacts = contacts;
+	}
+
 	
 }
