@@ -89,4 +89,20 @@ public class HomeController {
 		    return view;
 	  }
   }
+	
+	@GetMapping("/dashboard")
+	public String dashboard()
+
+	{
+		
+		return "dashboard";
+	}
+	
+	@GetMapping("/changePassword")
+	public String changePassword()
+
+	{
+		
+		return "changePassword";
+	}
 }

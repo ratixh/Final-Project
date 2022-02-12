@@ -66,3 +66,53 @@ body
 	
 	margin-top: 100px;
 }
+
+
+
+
+
+
+
+
+
+
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	list-style-type:none;
+	text-decoration:none;
+	font-family:'Poppins',sans-serif;
+}
+
+.sidebar{
+	width:15%;
+	position: fixed;
+	height:100%;
+	top:0;
+	left:0;
+	background: var(--main-color);
+	
+}
+
+.main-content{
+	margin-left:1000px;
+}
+
+.user-wrapper{
+	margin-left:40px;
+	padding:10px;
+	
+}
+
+.content-bar{
+	margin-left: 25%;
+	padding-left: 20px;
+}
+
+
+
+
+
+
