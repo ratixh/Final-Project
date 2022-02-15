@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "USER")
@@ -21,8 +23,11 @@ public class User
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
     
-    @Column
-	private String userName;
+    @NotBlank(message = "Name field is required !!")
+    @Size(min=2, max = 20, message = "minimum 2 and maximum 20 characters are allowed !!")
+    private String userName;
+    
+    
     
     @Column(unique = true)
 	private String userEmail;
@@ -160,6 +165,8 @@ public class User
 	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
 	}
+
+
 
 
 
