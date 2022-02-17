@@ -2,6 +2,8 @@ package com.Smart.controller;
 
 import org.springframework.stereotype.*;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -10,11 +12,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.Smart.Repository.ContactRepository;
 import com.Smart.Repository.UserRepository;
+import com.Smart.entity.Contact;
 import com.Smart.entity.User;
 import com.Smart.helper.Message;
 import com.Smart.service.*;
@@ -24,6 +29,12 @@ public class HomeController {
 	
 	@Autowired
 	private UserRepository userRepository;
+	private UserRepository personService;
+	
+	@ModelAttribute
+	public void addCommonData() {
+		
+	}
 	
 	
 	
@@ -69,10 +80,8 @@ public class HomeController {
 	}
 	
 	
-	
-	
 	@RequestMapping(value="/do_register", method = RequestMethod.POST)
-	   public String do_register(@Valid @ModelAttribute("user") User user,
+   public String do_register(@Valid @ModelAttribute("user") User user,
 			   //BindingResult result1,
 			   @RequestParam(value = "agreement",
 			   defaultValue = "false")
@@ -127,4 +136,76 @@ public class HomeController {
 	}
 	
 
+	@GetMapping("/signin")
+	public String customLogin(Model model) 
+	{
+		model.addAttribute("title","Login Page");
+		return "login";
+		
+	}
+	
+	@GetMapping("/userlogin")
+	public String login(Model model)
+	{
+		model.addAttribute("title","Dashboard");
+		return "userlogin";
+		
+	}
+	
+	@PostMapping("/dashboard")
+	public String Dashboard(Model model)
+	{
+		model.addAttribute("title","Dashboard- Smart Contact Manager");
+		return "dashboard";
+		
+	}
+	
+	@PostMapping("/userloginCheck")
+	  public String userloginCheck(@ModelAttribute User user,Model model)
+	  {
+		String view="";
+		  try
+		  {
+		    User user1= personService.findByUserEmailAndUserPassword(user.getUserEmail(), user.getUserPassword());
+		    
+		    System.out.println(user1);
+		  //  model.addAttribute("login", user1);
+		    if(user1==null)
+		    {
+		    	  view= "userlogin";
+		    }
+		    else
+		    {
+		    	view= "dashboard";
+		    	
+		    }
+		  }
+		 
+		  catch(Exception e) {
+			  
+			  System.out.println( e);
+		  }
+		  finally
+		  {
+			    return view;
+		  }
+	  }
+	
+	
+	
+	
+	@GetMapping("/dashboard1")
+	public String Dashboard1(Model model)
+	{
+		model.addAttribute("title","Dashboard- Smart Contact Manager");
+		return "dashboard";
+		
+	} 
+	
+	
+	
+
+	
+	
+	 
 }

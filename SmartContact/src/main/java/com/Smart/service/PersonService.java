@@ -9,5 +9,9 @@ public interface PersonService
 	
 	public void saveUserDetail(User user);
 	
+	
+	
+  
+
 }
 
