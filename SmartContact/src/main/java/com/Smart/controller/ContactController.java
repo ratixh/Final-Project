@@ -1,6 +1,9 @@
 package com.Smart.controller;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,6 +51,9 @@ private ContactRepository contactRepository;
 	public String viewContact(Model model) 
 	{
 		model.addAttribute("title","Your Contacts List");
+		List<Contact>  list =  contactService.displayAllContact();
+		model.addAttribute("contact", list);
+		System.out.println(list);
 		return "viewContact";
 	}
 	
@@ -58,6 +64,7 @@ private ContactRepository contactRepository;
 		model.addAttribute("title","My Profile");
 		return "myProfile";
 	}
+	
 	
 	
 	
