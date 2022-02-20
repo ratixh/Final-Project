@@ -47,16 +47,12 @@ private ContactRepository contactRepository;
 	}
 	
 	
-	@GetMapping("/viewContact")
-	public String viewContact(Model model) 
-	{
-		model.addAttribute("title","Your Contacts List");
-		List<Contact>  list =  contactService.displayAllContact();
-		model.addAttribute("contact", list);
-		System.out.println(list);
-		return "viewContact";
-	}
-	
+	/*
+	 * @GetMapping("/viewContact") public String viewContact(Model model) {
+	 * model.addAttribute("title","Your Contacts List"); List<Contact> list =
+	 * contactService.displayAllContact(); model.addAttribute("contact", list);
+	 * System.out.println(list); return "viewContact"; }
+	 */
 	
 	@GetMapping("/myProfile")
 	public String myProfile(Model model) 
@@ -67,7 +63,22 @@ private ContactRepository contactRepository;
 	
 	
 	
+	@GetMapping("/viewContact")
+	public String viewContact2(Model model)
+	{
+		model.addAttribute("title","Add Contact");
+		List<Contact>  list =  contactService.displayAllContact();
+		model.addAttribute("contact", list);
+		System.out.println(list);
+		return "viewContact2";
+	}
 	
+	@GetMapping("/settings")
+	public String settings(Model model) 
+	{
+		model.addAttribute("title","Settings");
+		return "settings";
+	}
 	
 
 }

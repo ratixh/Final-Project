@@ -144,6 +144,7 @@ body
 	margin-left: 30%; 
 }
 
+
 .sidebar a{
 	display: block;
 	width: 100%;
@@ -189,7 +190,7 @@ body
 
 .form-control{
 	text: white;
-	background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url(../images/food.jpg);
+	background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)), url(../images/food.jpg);
 }
 
 
@@ -198,6 +199,24 @@ body
 	margin-top:none;
 	margin-left: 220px;
 }
+
+
+.tableBody{
+	
+	text-decoration: white;
+}
+
+
+.tableee{
+	padding-top: 10px;
+	margin-top: 50px;
+	margin-left: 210px;
+	padding: auto;
+}
+
+
+
+
 
 
 

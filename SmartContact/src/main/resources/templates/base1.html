@@ -23,7 +23,7 @@
   <body>
   
   
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Smart Contact Manager</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
    
    
    
-    <div class="sidebar mt-5">
+    <div class="side sidebar mt-5">
        
       <!--<span onclick="toggleSidebar()" class="crossBtn"></span>   --> 
        
@@ -55,7 +55,7 @@
       <a th:href="@{/myProfile}" class="item"><i class="fa-solid fa-user"></i>My Profile</a>
       <a th:href="@{viewContact}" class="item"><i class="fa-solid fa-phone-arrow-up-right"></i>View Contact</a>
       <a th:href="@{/addContact}" class="item"><i class="fa-solid fa-address-card"></i>Add Contact</a>
-      <a href="#" class="item"><i class="fa-solid fa-gear"></i>Settings</a>
+      <a th:href="@{/settings}" ><i class="fa-solid fa-gear"></i>Settings</a>
       <a th:href="@{/home}"  class="item"><i class="fa-solid fa-house-chimney-medical"></i>Logout</a>
      
         <div class="divider"></div>
